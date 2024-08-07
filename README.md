@@ -1,1 +1,1 @@
-Journi is an AI Trip Planner
+# Journi is an AI Trip Planner
