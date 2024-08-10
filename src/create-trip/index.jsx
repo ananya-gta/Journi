@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import GooglePlacesAutocomplete from "react-google-places-autocomplete";
-// import { Input } from "../components/ui/input.jsx";
 import { Input } from "../components/ui/input";
-import { SelectBudgetOptions } from "../constants/options";
+import { SelectBudgetOptions, SelectTravelsList } from "../constants/options.jsx";
 
 function CreateTrip() {
   const [place, setPlace] = useState();
@@ -58,7 +57,13 @@ function CreateTrip() {
           <h2 className="text-xl my-3 font-medium">
           Who do you plan on traveling with on your next adventure?
           </h2>
-          <Input placeholder={"Ex.3"} type="number" />
+          <div>
+            {SelectTravelsList.map((item, i)=> {
+              <div key={i}>
+                <h2>{item.icon}</h2>
+              </div>
+            })}
+          </div>
         </div>
 
 
