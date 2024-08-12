@@ -44,12 +44,12 @@ function CreateTrip() {
           What is your budget?
           </h2>
           <div>
-            {SelectBudgetOptions.map((item, index)=> {
+            {SelectBudgetOptions.map((item, index)=> (
               <div key={index}>
                 <h2>{item.icon}</h2>
 
               </div>
-            })}
+            ))}
           </div>
         </div>
 
@@ -58,11 +58,11 @@ function CreateTrip() {
           Who do you plan on traveling with on your next adventure?
           </h2>
           <div>
-            {SelectTravelsList.map((item, i)=> {
+            {SelectTravelsList.map((item, i)=> (
               <div key={i}>
                 <h2>{item.icon}</h2>
               </div>
-            })}
+            ))}
           </div>
         </div>
 
