@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import GooglePlacesAutocomplete from "react-google-places-autocomplete";
 import { Input } from "../components/ui/input";
 import {
@@ -8,6 +8,16 @@ import {
 
 function CreateTrip() {
   const [place, setPlace] = useState();
+
+  const [formData, setFormData] = useState([]);
+
+  const handleInputChange = (name, value) => {
+    setFormData({ ...formData, [name]: value });
+  };
+
+  useEffect(() => {
+    console.log(formData);
+  }, [formData]);
 
   return (
     <div className="sm:px-10 md:px-32 lg:px-56 px-5 mt-10">
@@ -29,7 +39,7 @@ function CreateTrip() {
               place,
               onChange: (value) => {
                 setPlace(value);
-                console.log(value);
+                handleInputChange("location", value);
               },
             }}
           />
